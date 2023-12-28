@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom'
 import StyledHeader from './style'
 import efoodLogo from '../../assets/images/logo.svg'
 
 const Header = () => (
   <StyledHeader>
-    <img src={efoodLogo} alt="Logo do efood" />
+    <Link to={'/'}>
+      <img src={efoodLogo} alt="Logo do efood" />
+    </Link>
     <h1>Viva experiências gastronômicasno conforto da sua casa</h1>
   </StyledHeader>
 )

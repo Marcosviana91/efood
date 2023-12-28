@@ -26,13 +26,13 @@ const mock: CardProps[] = [
     page: 'la_dolce_vita_trattoria'
   },
   {
-    image: la_dolce_vita_trattoria,
-    title: 'La Dolce Vita Trattoria',
+    image: hioki_sushi,
+    title: 'Hioki Sushi',
     desciption:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    tags: ['Italiana'],
-    note: 4.6,
-    page: 'la_dolce_vita_trattoria'
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
+    tags: ['Destaque da semana', 'Japonesa'],
+    note: 4.9,
+    page: 'hioki_sushi'
   },
   {
     image: la_dolce_vita_trattoria,
@@ -53,13 +53,13 @@ const mock: CardProps[] = [
     page: 'la_dolce_vita_trattoria'
   },
   {
-    image: la_dolce_vita_trattoria,
-    title: 'La Dolce Vita Trattoria',
+    image: hioki_sushi,
+    title: 'Hioki Sushi',
     desciption:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    tags: ['Italiana'],
-    note: 4.6,
-    page: 'la_dolce_vita_trattoria'
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
+    tags: ['Destaque da semana', 'Japonesa'],
+    note: 4.9,
+    page: 'hioki_sushi'
   }
 ]
 
