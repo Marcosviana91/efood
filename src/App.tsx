@@ -1,15 +1,15 @@
-import EstiloGlobal from './styles'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Header from './container/Header'
-import Main from './container/Main'
+import Home from './pages/Home'
 import Footer from './container/Footer'
+
+import EstiloGlobal from './styles'
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <Header />
-      <Main />
+      <Home />
       <Footer />
     </>
   )
