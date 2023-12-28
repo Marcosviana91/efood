@@ -1,6 +1,6 @@
 import StyledCard, { CardImg } from './style'
 import estrela from '../../assets/images/estrela.svg'
-import CardButton from '../Button'
+import { CardButton } from '../Button'
 import CardTag from '../Tags'
 import { CardProps } from '../../utilities/types'
 
@@ -22,7 +22,7 @@ const Card = (props: CardProps) => (
       </div>
       <p>{props.desciption}</p>
       <div>
-        <CardButton>Saiba mais</CardButton>
+        <CardButton to={props.page}>Saiba mais</CardButton>
       </div>
     </div>
   </StyledCard>

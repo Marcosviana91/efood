@@ -1,11 +1,16 @@
-import StyledCardButton from './style'
+import { StyledCardButton, StyledMenuItemButton } from './style'
 
 type Props = {
   children: string
+  to: string
 }
 
-const CardButton = (props: Props) => (
-  <StyledCardButton>{props.children}</StyledCardButton>
+export const CardButton = (props: Props) => (
+  <StyledCardButton to={`/restaurantes?q=${props.to}`}>
+    {props.children}
+  </StyledCardButton>
 )
 
-export default CardButton
+export const MenuItemButton = (props: Props) => (
+  <StyledMenuItemButton>{props.children}</StyledMenuItemButton>
+)

@@ -1,11 +1,12 @@
+import { RestaurantPageProps } from '../../utilities/types'
 import StyledHero from './style'
 
-const Hero = () => (
-  <StyledHero>
+const Hero = (props: Omit<RestaurantPageProps, 'menu_itens'>) => (
+  <StyledHero style={{ backgroundImage: `url(${props.hero_image})` }}>
     <div className="container">
-      <div>Italiana</div>
+      <h2>{props.food_type}</h2>
       <div>
-        <strong>La Dolce Vita Trattoria</strong>
+        <strong>{props.name}</strong>
       </div>
     </div>
   </StyledHero>

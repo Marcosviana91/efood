@@ -1,6 +1,7 @@
 import { styled } from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const StyledCardButton = styled.button`
+export const StyledCardButton = styled(Link)`
   height: 24px;
   width: max-content;
   padding: 4px 6px;
@@ -11,4 +12,11 @@ const StyledCardButton = styled.button`
   font-weight: 700;
 `
 
-export default StyledCardButton
+export const StyledMenuItemButton = styled.button`
+  background-color: #ffebd9;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
