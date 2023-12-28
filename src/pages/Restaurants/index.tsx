@@ -110,6 +110,9 @@ const Restaurants = () => {
   ) {
     window.location.reload()
   }
+  if (!Object.keys(mock_page).includes(getRestaurantNameFromQuerie)) {
+    window.location.href = window.location.origin
+  }
 
   document.title = 'eFood | ' + mock_page[getRestaurantNameFromQuerie].name
 
