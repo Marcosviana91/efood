@@ -9,6 +9,11 @@ const EstiloGlobal = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     color: ${estilo.corDaFonte};
   }
+
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 `
 
 export default EstiloGlobal
