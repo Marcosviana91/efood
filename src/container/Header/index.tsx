@@ -1,5 +1,5 @@
 import StyledHeader from './style'
-import efoodLogo from '../../assets/logo.svg'
+import efoodLogo from '../../assets/images/logo.svg'
 
 const Header = () => (
   <StyledHeader>

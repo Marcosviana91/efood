@@ -1,5 +1,5 @@
 import StyledCard, { CardImg } from './style'
-import estrela from '../../assets/estrela.svg'
+import estrela from '../../assets/images/estrela.svg'
 import CardButton from '../Button'
 import CardTag from '../Tags'
 import { CardProps } from '../../utilities/types'

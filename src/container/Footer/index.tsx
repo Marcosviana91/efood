@@ -1,8 +1,8 @@
 import StyledFooter from './style'
-import efoodLogo from '../../assets/logo.svg'
-import facebook from '../../assets/facebook.svg'
-import instagram from '../../assets/instagram.svg'
-import twitter from '../../assets/twitter.svg'
+import efoodLogo from '../../assets/images/logo.svg'
+import facebook from '../../assets/images/facebook.svg'
+import instagram from '../../assets/images/instagram.svg'
+import twitter from '../../assets/images/twitter.svg'
 
 const Footer = () => (
   <StyledFooter>
