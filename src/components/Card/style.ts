@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 const StyledCard = styled.div`
-  height: 400px;
+  min-height: 400px;
   width: 474px;
   border: 1px solid #e66767;
   position: relative;
