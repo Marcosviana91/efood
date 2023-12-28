@@ -1,11 +1,18 @@
 import { styled } from 'styled-components'
 
-import hioki_sushi from '../../assets/hioki_sushi.png'
-
 const StyledCard = styled.div`
   height: 400px;
   width: 474px;
   border: 1px solid #e66767;
+  position: relative;
+
+  #card_container {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+  }
 
   #desc {
     padding: 8px;
@@ -34,7 +41,6 @@ const StyledCard = styled.div`
 
 const CardImg = styled.div`
   height: 218px;
-  background-image: url(${hioki_sushi});
 `
 
 export default StyledCard
