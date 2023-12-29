@@ -9,6 +9,8 @@ const StyledCardTag = styled.div`
   text-align: center;
   font-size: 12px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
 `
 
 export default StyledCardTag

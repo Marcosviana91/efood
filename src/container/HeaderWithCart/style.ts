@@ -9,6 +9,13 @@ const StyledHeaderWithCart = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    span {
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 21.09px;
+      text-align: center;
+    }
   }
 `
 export default StyledHeaderWithCart

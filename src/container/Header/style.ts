@@ -14,6 +14,7 @@ const StyledHeader = styled.header`
   h1 {
     width: 540px;
     font-size: 36px;
+    line-height: 42.19px;
     font-weight: 900;
     text-align: center;
   }

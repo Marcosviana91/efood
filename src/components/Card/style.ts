@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 const StyledCard = styled.div`
   min-height: 400px;
-  width: 474px;
+  width: 472px;
   border: 1px solid #e66767;
   position: relative;
 
@@ -24,11 +24,14 @@ const StyledCard = styled.div`
       h3 {
         font-size: 18px;
         font-weight: 700;
+        line-height: 21.09px;
+        text-align: center;
       }
 
       #card_point {
         display: flex;
         gap: 8px;
+        font-weight: 700;
       }
     }
 

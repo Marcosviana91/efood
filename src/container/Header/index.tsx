@@ -7,7 +7,7 @@ const Header = () => (
     <Link to={'/'}>
       <img src={efoodLogo} alt="Logo do efood" />
     </Link>
-    <h1>Viva experiências gastronômicasno conforto da sua casa</h1>
+    <h1>Viva experiências gastronômicas no conforto da sua casa</h1>
   </StyledHeader>
 )
 

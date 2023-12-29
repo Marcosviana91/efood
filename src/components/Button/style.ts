@@ -16,6 +16,8 @@ export const StyledMenuItemButton = styled.button`
   background-color: #ffebd9;
   width: 100%;
   height: 24px;
+  font-size: 14px;
+  line-height: 16.41px;
   display: flex;
   justify-content: center;
   align-items: center;
