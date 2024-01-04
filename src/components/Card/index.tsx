@@ -22,7 +22,7 @@ const Card = (props: CardProps) => (
       </div>
       <p>{props.desciption}</p>
       <div>
-        <CardButton to={props.page}>Saiba mais</CardButton>
+        <CardButton to={`${props.page}`}>Saiba mais</CardButton>
       </div>
     </div>
   </StyledCard>

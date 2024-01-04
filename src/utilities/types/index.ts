@@ -4,7 +4,7 @@ export type CardProps = {
   desciption: string
   tags: string[]
   note: number
-  page: string
+  page: number
 }
 
 export type MenuItemProps = {
@@ -18,4 +18,22 @@ export type RestaurantPageProps = {
   food_type: string
   hero_image: string
   menu_itens: MenuItemProps[]
+}
+
+export type RestauranteApiProps = {
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: {
+    id: number
+    nome: string
+    descricao: string
+    preco: number
+    porcao: string
+    foto: string
+  }
 }

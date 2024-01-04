@@ -6,7 +6,7 @@ type Props = {
 }
 
 export const CardButton = (props: Props) => (
-  <StyledCardButton to={`/restaurantes?q=${props.to}`}>
+  <StyledCardButton to={`/restaurantes/${props.to}`}>
     {props.children}
   </StyledCardButton>
 )
