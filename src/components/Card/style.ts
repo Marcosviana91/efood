@@ -23,7 +23,7 @@ const StyledCard = styled.div`
 
       h3 {
         font-size: 18px;
-        font-weight: 700;
+        font-weight: 900;
         line-height: 21.09px;
         text-align: center;
       }
@@ -32,6 +32,8 @@ const StyledCard = styled.div`
         display: flex;
         gap: 8px;
         font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
       }
     }
 
