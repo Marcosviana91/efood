@@ -5,6 +5,11 @@ const StyledMenuItem = styled.div`
   width: 320px;
   padding: 8px;
   background-color: #e66767;
+
+  img {
+    width: 100%;
+    height: 168px;
+  }
   h3,
   p {
     color: #ffebd9;

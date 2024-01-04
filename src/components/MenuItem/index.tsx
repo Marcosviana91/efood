@@ -5,9 +5,9 @@ import { MenuItemProps } from '../../utilities/types'
 
 const MenuItem = (props: MenuItemProps) => (
   <StyledMenuItem>
-    <img src={props.item_image} alt="Pizza de Marguerita" />
-    <h3>{props.item_name}</h3>
-    <p>{props.item_description}</p>
+    <img src={props.foto} alt="Pizza de Marguerita" />
+    <h3>{props.nome}</h3>
+    <p>{props.descricao.substring(0, 170) + '...'}</p>
     <StyledMenuItemButton>Adicionar ao carrinho</StyledMenuItemButton>
   </StyledMenuItem>
 )

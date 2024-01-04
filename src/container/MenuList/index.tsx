@@ -15,12 +15,7 @@ const MenuList = (props: RestaurantPageProps) => (
     <div className="container">
       <StyledMenuList>
         {props.menu_itens.map((item, index) => (
-          <MenuItem
-            key={index}
-            item_name={item.item_name}
-            item_description={item.item_description}
-            item_image={item.item_image}
-          />
+          <MenuItem key={index} {...item} />
         ))}
       </StyledMenuList>
     </div>
