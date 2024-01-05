@@ -20,6 +20,7 @@ const Restaurants = () => {
       })
   }, [])
   if (!restaurante) return <h3>Carregando</h3>
+  document.title = 'eFood | ' + restaurante.titulo
 
   return (
     <>
