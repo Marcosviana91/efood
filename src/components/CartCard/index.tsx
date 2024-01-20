@@ -1,14 +1,15 @@
 import StyledCartCard from './style'
 
-import pizza from '../../assets/images/pizza_cart_card.png'
 import lixeira from '../../assets/images/lixeira_icon.png'
+import { MenuItemProps } from '../../utilities/types'
+import { formataPreco } from '../../utilities/helper'
 
-function CartCard() {
+function CartCard(props: MenuItemProps) {
   return (
     <StyledCartCard>
-      <img src={pizza} alt="" />
-      <h3>Pizza Marguerita</h3>
-      <span>R$ 60,90</span>
+      <img src={props.foto} alt={props.nome} />
+      <h3>{props.nome}</h3>
+      <span>{formataPreco(props.preco)}</span>
       <button type="button">
         <img src={lixeira} />
       </button>

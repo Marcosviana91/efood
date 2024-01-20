@@ -15,6 +15,7 @@ const StyledHeaderWithCart = styled.header`
       font-size: 18px;
       line-height: 21.09px;
       text-align: center;
+      cursor: pointer;
     }
   }
 `
