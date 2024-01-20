@@ -26,8 +26,8 @@ const cartSlice = createSlice({
         state.itens.push(action.payload)
       }
     },
-    removeItem: (state, action: PayloadAction<string>) => {
-      console.log(state, action)
+    removeItem: (state, action: PayloadAction<number>) => {
+      state.itens = state.itens.filter((item) => item.id !== action.payload)
     }
   }
 })
