@@ -25,12 +25,7 @@ const Restaurants = () => {
   return (
     <>
       <HeaderWithCart />
-      <MenuList
-        name={restaurante?.titulo}
-        food_type={restaurante?.tipo}
-        hero_image={restaurante?.capa}
-        menu_itens={restaurante?.cardapio}
-      />
+      <MenuList {...restaurante} />
     </>
   )
 }

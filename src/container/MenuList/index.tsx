@@ -3,18 +3,14 @@ import StyledMenuList from './style'
 import Hero from '../Hero'
 
 import MenuItem from '../../components/MenuItem'
-import { RestaurantPageProps } from '../../utilities/types'
+import { RestauranteApiProps } from '../../utilities/types'
 
-const MenuList = (props: RestaurantPageProps) => (
+const MenuList = (props: RestauranteApiProps) => (
   <>
-    <Hero
-      food_type={props.food_type}
-      name={props.name}
-      hero_image={props.hero_image}
-    />
+    <Hero {...props} />
     <div className="container">
       <StyledMenuList>
-        {props.menu_itens.map((item, index) => (
+        {props.cardapio.map((item, index) => (
           <MenuItem key={index} {...item} />
         ))}
       </StyledMenuList>

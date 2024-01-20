@@ -2,27 +2,28 @@ import StyledCard, { CardImg } from './style'
 import estrela from '../../assets/images/estrela.svg'
 import { CardButton } from '../Button'
 import CardTag from '../Tags'
-import { CardProps } from '../../utilities/types'
+import { RestauranteApiProps } from '../../utilities/types'
+import { getTagsFromData } from '../../utilities/helper'
 
-const Card = (props: CardProps) => (
+const Card = (props: RestauranteApiProps) => (
   <StyledCard>
     <div id="card_container">
-      {props.tags.map((tag, index) => (
+      {getTagsFromData(props).map((tag, index) => (
         <CardTag key={index}>{tag}</CardTag>
       ))}
     </div>
-    <CardImg style={{ backgroundImage: `url(${props.image})` }} />
+    <CardImg style={{ backgroundImage: `url(${props.capa})` }} />
     <div id="desc">
       <div id="card_header">
-        <h3>{props.title}</h3>{' '}
+        <h3>{props.titulo}</h3>{' '}
         <div id="card_point">
-          <span>{props.note}</span>
+          <span>{props.avaliacao}</span>
           <img src={estrela} />
         </div>
       </div>
-      <p>{props.desciption}</p>
+      <p>{props.descricao}</p>
       <div>
-        <CardButton to={`${props.page}`}>Saiba mais</CardButton>
+        <CardButton to={`${props.id}`}>Saiba mais</CardButton>
       </div>
     </div>
   </StyledCard>
