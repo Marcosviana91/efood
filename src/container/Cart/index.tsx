@@ -8,24 +8,35 @@ import StyledCart, {
   StyledCartContainer,
   StyledCartResumo
 } from './style'
+import { formataPreco } from '../../utilities/helper'
 
 function CartContainer() {
   const itens = useSelector((state: RootReducer) => state.cartReducer.itens)
+
   return (
     <StyledCartContainer>
       <ul>
         {itens.map((item, _index) => {
-          console.log(item, _index)
           return <CartCard key={_index} {...item} />
         })}
       </ul>
-      <StyledCartResumo>
-        <div>
-          <span>Valor total:</span>
-          <span>R$ 182,70</span>
-        </div>
-        <button> Continuar com a entrega</button>
-      </StyledCartResumo>
+      {itens.length ? (
+        <StyledCartResumo>
+          <div>
+            <span>Valor total:</span>
+            <span>
+              {formataPreco(
+                itens.reduce((acc, val) => {
+                  return (acc += val.preco)
+                }, 0)
+              )}
+            </span>
+          </div>
+          <button> Continuar com a entrega</button>
+        </StyledCartResumo>
+      ) : (
+        <span style={{ color: 'white' }}>O carrinho está vazio...</span>
+      )}
     </StyledCartContainer>
   )
 }
