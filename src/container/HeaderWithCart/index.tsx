@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleCartDisplay } from '../../store/reducers/cart'
+import { toggleSibeBar } from '../../store/reducers/cart'
 
 import StyledHeaderWithCart from './style'
 import efoodLogo from '../../assets/images/logo.svg'
@@ -18,7 +18,7 @@ const HeaderWithCart = () => {
         </Link>
         <span
           onClick={() => {
-            if (itens.length > 0) dispatch(toggleCartDisplay())
+            if (itens.length > 0) dispatch(toggleSibeBar())
             else alert('Carrinho Vazio')
           }}
         >

@@ -1,4 +1,4 @@
-export interface MenuItemProps {
+declare interface MenuItemProps {
   id: number
   nome: string
   descricao: string
@@ -7,12 +7,12 @@ export interface MenuItemProps {
   foto: string
 }
 
-export interface MenuItemModalProps extends MenuItemProps {
+declare interface MenuItemModalProps extends MenuItemProps {
   showModal: boolean
   toggleModal: () => void
 }
 
-export interface RestauranteApiProps {
+declare interface RestauranteApiProps {
   id: number
   titulo: string
   destacado: boolean
