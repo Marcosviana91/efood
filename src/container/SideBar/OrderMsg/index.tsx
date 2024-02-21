@@ -1,13 +1,17 @@
 import { useDispatch } from 'react-redux'
-import { toggleSibeBar, changeContent } from '../../../store/reducers/cart'
+import {
+  toggleSibeBar,
+  changeContent,
+  clearCart
+} from '../../../store/reducers/cart'
 
 import StyledOrderMsg from './style'
 
-function OrderMsg() {
+function OrderMsg({ ORDER_ID }: { ORDER_ID: string }) {
   const dispatch = useDispatch()
   return (
     <StyledOrderMsg>
-      <h3>Pedido realizado - ORDER_ID</h3>
+      <h3>Pedido realizado - {ORDER_ID}</h3>
       <div>
         <p>
           Estamos felizes em informar que seu pedido já está em processo de
@@ -34,6 +38,7 @@ function OrderMsg() {
         onClick={() => {
           dispatch(changeContent('cart'))
           dispatch(toggleSibeBar())
+          dispatch(clearCart())
         }}
       >
         Concluir

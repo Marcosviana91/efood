@@ -1,15 +1,36 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { RootReducer } from '../../../store'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 import InputMask from 'react-input-mask'
 
 import { changeContent } from '../../../store/reducers/cart'
+import { setPayment } from '../../../store/reducers/purchase'
 
 import StyledCardForm from './style'
+import { formataPreco } from '../../../utilities/helper'
+import { usePurchaseMutation } from '../../../services/api'
 
-function CardPaymentForm() {
+function CardPaymentForm({
+  setORDER_ID
+}: {
+  setORDER_ID: (data: string) => void
+}) {
   const dispatch = useDispatch()
+  const [purchase, { data, isSuccess }] = usePurchaseMutation()
+  const itens = useSelector((state: RootReducer) => state.cartReducer.itens)
+  const delivery = useSelector(
+    (state: RootReducer) => state.orderReducer.delivery
+  )
+  const payment = useSelector(
+    (state: RootReducer) => state.orderReducer.payment
+  )
+  const products = useSelector(
+    (state: RootReducer) => state.orderReducer.products
+  )
+
   const formik = useFormik({
     initialValues: {
       cardOwner: '',
@@ -28,13 +49,41 @@ function CardPaymentForm() {
       cardExpiresYear: Yup.string().required('Este campo é obrigatório')
     }),
     onSubmit: (values) => {
-      console.log(values)
-      // dispatch(changeContent('ordermsg'))
+      dispatch(
+        setPayment({
+          card: {
+            name: values.cardOwner,
+            number: values.cardNumber,
+            code: parseInt(values.cardCode),
+            expires: {
+              month: parseInt(values.cardExpiresMonth),
+              year: parseInt(values.cardExpiresYear)
+            }
+          }
+        })
+      )
+      purchase({
+        products: products,
+        delivery: delivery,
+        payment: payment
+      })
     }
   })
+
+  if (isSuccess && data) {
+    dispatch(changeContent('ordermsg'))
+    setORDER_ID(data.orderId as string)
+  }
   return (
     <StyledCardForm>
-      <h3>Pagamento - Valor a pagar R$ 190,90</h3>
+      <h3>
+        Pagamento - Valor a pagar{' '}
+        {formataPreco(
+          itens.reduce((acc, val) => {
+            return (acc += val.preco)
+          }, 0)
+        )}
+      </h3>
       <form onSubmit={formik.handleSubmit}>
         <label>
           <span>Nome no cartão</span>

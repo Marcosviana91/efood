@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import InputMask from 'react-input-mask'
 
 import { changeContent } from '../../../store/reducers/cart'
+import { setDelivery } from '../../../store/reducers/purchase'
 
 import StyledAdressForm from './style'
 
@@ -37,7 +38,18 @@ function AddressForm() {
         .required('Indique onde devemos entregar')
     }),
     onSubmit: (values) => {
-      console.log(values)
+      dispatch(
+        setDelivery({
+          receiver: values.recName,
+          address: {
+            description: values.recAdress,
+            city: values.recCity,
+            number: parseInt(values.recNum),
+            zipCode: values.recCode,
+            complement: values.recComp
+          }
+        })
+      )
       dispatch(changeContent('cardform'))
     }
   })

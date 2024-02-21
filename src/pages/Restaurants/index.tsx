@@ -1,20 +1,14 @@
 import { useParams } from 'react-router-dom'
 
+import { useGetRestauranteByIdQuery } from '../../services/api'
+
 import HeaderWithCart from '../../container/HeaderWithCart'
 import MenuList from '../../container/MenuList'
 
-import { useEffect, useState } from 'react'
-
 const Restaurants = () => {
   const { id } = useParams()
-  const [restaurante, setRestaurante] = useState<RestauranteApiProps>()
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes/' + id)
-      .then((res) => res.json())
-      .then((res) => {
-        setRestaurante(res)
-      })
-  }, [])
+  const { data: restaurante } = useGetRestauranteByIdQuery(id!)
+
   if (!restaurante) return <h3>Carregando</h3>
   document.title = 'eFood | ' + restaurante.titulo
 

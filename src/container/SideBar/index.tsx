@@ -9,8 +9,10 @@ import CardPaymentForm from './CardPayment'
 
 import StyledSideBar, { StyledOverlay } from './style'
 import OrderMsg from './OrderMsg'
+import { useState } from 'react'
 
 function SideBar() {
+  const [orderId, setOrderId] = useState('')
   const dispatch = useDispatch()
   const showSibeBar = useSelector(
     (state: RootReducer) => state.cartReducer.show
@@ -24,8 +26,10 @@ function SideBar() {
         <StyledOverlay onClick={() => dispatch(toggleSibeBar())} />
         {SibeBarContent == 'cart' && <CartContainer />}
         {SibeBarContent == 'adressform' && <AddressForm />}
-        {SibeBarContent == 'cardform' && <CardPaymentForm />}
-        {SibeBarContent == 'ordermsg' && <OrderMsg />}
+        {SibeBarContent == 'cardform' && (
+          <CardPaymentForm setORDER_ID={setOrderId} />
+        )}
+        {SibeBarContent == 'ordermsg' && <OrderMsg ORDER_ID={orderId} />}
       </StyledSideBar>
     )
   return null
