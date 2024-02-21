@@ -33,6 +33,9 @@ const StyledCardForm = styled.aside`
         font-size: 14px;
         line-height: 16.41px;
       }
+      > small {
+        color: black;
+      }
     }
     > div {
       display: flex;
