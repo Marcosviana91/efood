@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import { StyledMenuItemButton } from '../Button/style'
+import { estilo } from '../../styles/variaveis'
 
 const StyledModal = styled.div`
   height: 100vh;
@@ -19,7 +20,7 @@ export const StyledModalContainer = styled.div`
   padding: 32px;
   display: flex;
   gap: 24px;
-  background-color: #e66767;
+  background-color: ${estilo.corDaFonte};
 
   position: relative;
 

@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { estilo } from '../../../styles/variaveis'
 
 const StyledCart = styled.aside`
   position: fixed;
@@ -17,7 +18,7 @@ export const StyledOverlay = styled.div`
 
 export const StyledCartContainer = styled.div`
   width: 360px;
-  background-color: #e66767;
+  background-color: ${estilo.corDaFonte};
   padding: 32px 8px;
 `
 export const StyledCartResumo = styled.div`
@@ -28,7 +29,7 @@ export const StyledCartResumo = styled.div`
     margin-top: 40px;
     margin-bottom: 16px;
     span {
-      color: #ffebd9;
+      color: ${estilo.corDaFonte2};
       font-family: Roboto;
       font-size: 14px;
       font-weight: 700;
@@ -39,7 +40,7 @@ export const StyledCartResumo = styled.div`
   }
 
   > button {
-    background-color: #ffebd9;
+    background-color: ${estilo.corDaFonte2};
     width: 100%;
     height: 24px;
 

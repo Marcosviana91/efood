@@ -1,11 +1,12 @@
 import { styled } from 'styled-components'
+import { estilo } from '../../../styles/variaveis'
 
 const StyledCardForm = styled.aside`
   width: 360px;
-  background-color: #e66767;
+  background-color: ${estilo.corDaFonte};
   padding: 32px 8px;
   > h3 {
-    color: #ffebd9;
+    color: ${estilo.corDaFonte2};
     font-weight: 700;
     font-size: 16px;
     line-height: 18.75px;
@@ -17,7 +18,7 @@ const StyledCardForm = styled.aside`
       margin-bottom: 8px;
       > span {
         display: block;
-        color: #ffebd9;
+        color: ${estilo.corDaFonte2};
         font-weight: 700;
         font-size: 14px;
         line-height: 16.41px;
@@ -28,7 +29,7 @@ const StyledCardForm = styled.aside`
         height: 32px;
         padding: 8px;
         color: #4b4b4b;
-        background-color: #ffebd9;
+        background-color: ${estilo.corDaFonte2};
         font-weight: 700;
         font-size: 14px;
         line-height: 16.41px;
@@ -52,7 +53,7 @@ const StyledCardForm = styled.aside`
     }
 
     > button {
-      background-color: #ffebd9;
+      background-color: ${estilo.corDaFonte2};
       font-weight: 700;
       font-size: 14px;
       line-height: 16.41px;

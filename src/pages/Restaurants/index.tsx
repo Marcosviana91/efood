@@ -4,18 +4,18 @@ import { useGetRestauranteByIdQuery } from '../../services/api'
 
 import HeaderWithCart from '../../container/HeaderWithCart'
 import MenuList from '../../container/MenuList'
+import Loader from '../../components/Loader'
 
 const Restaurants = () => {
   const { id } = useParams()
   const { data: restaurante } = useGetRestauranteByIdQuery(id!)
 
-  if (!restaurante) return <h3>Carregando</h3>
-  document.title = 'eFood | ' + restaurante.titulo
+  if (restaurante) document.title = 'eFood | ' + restaurante.titulo
 
   return (
     <>
       <HeaderWithCart />
-      <MenuList {...restaurante} />
+      {restaurante ? <MenuList {...restaurante} /> : <Loader />}
     </>
   )
 }

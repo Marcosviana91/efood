@@ -1,11 +1,12 @@
 import { styled } from 'styled-components'
+import { estilo } from '../../../styles/variaveis'
 
 const StyledOrderMsg = styled.aside`
   width: 360px;
-  background-color: #e66767;
+  background-color: ${estilo.corDaFonte};
   padding: 32px 8px;
   > h3 {
-    color: #ffebd9;
+    color: ${estilo.corDaFonte2};
     font-weight: 700;
     font-size: 16px;
     line-height: 18.75px;
@@ -13,7 +14,7 @@ const StyledOrderMsg = styled.aside`
   }
   > div {
     p {
-      color: #ffebd9;
+      color: ${estilo.corDaFonte2};
       font-size: 14px;
       line-height: 22px;
       font-weight: 400;
@@ -21,7 +22,7 @@ const StyledOrderMsg = styled.aside`
   }
 
   > button {
-    background-color: #ffebd9;
+    background-color: ${estilo.corDaFonte2};
     font-weight: 700;
     font-size: 14px;
     line-height: 16.41px;

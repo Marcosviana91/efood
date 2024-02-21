@@ -1,9 +1,10 @@
 import { styled } from 'styled-components'
+import { estilo } from '../../styles/variaveis'
 
 const StyledCard = styled.div`
   min-height: 400px;
   width: 472px;
-  border: 1px solid #e66767;
+  border: 1px solid ${estilo.corDaFonte};
   position: relative;
 
   #card_container {

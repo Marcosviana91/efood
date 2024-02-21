@@ -1,8 +1,9 @@
 import { styled } from 'styled-components'
+import { estilo } from '../../styles/variaveis'
 
 const StyledFooter = styled.footer`
   height: 298px;
-  background-color: #ffebd9;
+  background-color: ${estilo.corDaFonte2};
   padding: 40px;
 
   display: flex;

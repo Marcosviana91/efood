@@ -1,8 +1,9 @@
 import { styled } from 'styled-components'
+import { estilo } from '../../styles/variaveis'
 
 const StyledHeader = styled.header`
   height: 384px;
-  background-color: #ffebd9;
+  background-color: ${estilo.corDaFonte2};
   padding-top: 64px;
   padding-bottom: 40px;
 
