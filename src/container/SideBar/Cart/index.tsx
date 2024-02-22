@@ -51,8 +51,8 @@ function CartContainer() {
                 key={item.id}
                 variants={itemVariants}
                 exit={{
-                  x: 300,
                   opacity: 0,
+                  scale: 0,
                   transition: {
                     type: 'tween'
                   }

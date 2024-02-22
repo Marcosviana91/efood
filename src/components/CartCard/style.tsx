@@ -44,6 +44,7 @@ const StyledCartCard = styled.div`
     bottom: 8px;
     right: 8px;
     img {
+      border-radius: 2px;
       width: 100%;
     }
   }
