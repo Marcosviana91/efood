@@ -53,3 +53,10 @@ declare interface OrderProps {
     }
   }
 }
+
+//
+declare interface NotificationProps {
+  id?: number
+  title: string
+  text: string
+}

@@ -10,6 +10,7 @@ import Footer from './container/Footer'
 
 import EstiloGlobal from './styles'
 import SideBar from './container/SideBar'
+import NotificationsContainer from './container/Notifications'
 
 const Rotas = () => (
   <Routes>
@@ -25,6 +26,7 @@ function App() {
         <EstiloGlobal />
         <Rotas />
         <SideBar />
+        <NotificationsContainer />
         <Footer />
       </BrowserRouter>
     </Provider>
