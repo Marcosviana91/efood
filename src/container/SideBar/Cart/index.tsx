@@ -1,24 +1,75 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { AnimatePresence, motion, Variants } from 'framer-motion'
+
 import { RootReducer } from '../../../store'
 import { changeContent } from '../../../store/reducers/cart'
 
 import CartCard from '../../../components/CartCard'
 import { formataPreco } from '../../../utilities/helper'
-import { StyledCartContainer, StyledCartResumo } from './style'
+import StyledCartContainerMotion, { StyledCartResumo } from './style'
+
+const itemVariants: Variants = {
+  initial: {
+    opacity: 0,
+    y: 20
+  },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: 'easeOut'
+    }
+  }
+}
+
+const listVariants: Variants = {
+  initial: {
+    opacity: 0
+  },
+  final: {
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.5,
+      delayChildren: 0.3,
+      staggerChildren: 0.1
+    }
+  }
+}
 
 function CartContainer() {
   const itens = useSelector((state: RootReducer) => state.cartReducer.itens)
   const dispatch = useDispatch()
 
   return (
-    <StyledCartContainer>
-      <ul>
-        {itens.map((item, _index) => {
-          return <CartCard key={_index} {...item} />
-        })}
-      </ul>
+    <StyledCartContainerMotion>
+      <motion.ul variants={listVariants} initial="initial" animate="final">
+        <AnimatePresence>
+          {itens.map((item) => {
+            return (
+              <motion.li
+                key={item.id}
+                variants={itemVariants}
+                exit={{
+                  x: 300,
+                  opacity: 0,
+                  transition: {
+                    type: 'tween'
+                  }
+                }}
+              >
+                <CartCard {...item} />
+              </motion.li>
+            )
+          })}
+        </AnimatePresence>
+      </motion.ul>
       {itens.length ? (
-        <StyledCartResumo>
+        <StyledCartResumo
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
           <div>
             <span>Valor total:</span>
             <span>
@@ -36,7 +87,7 @@ function CartContainer() {
       ) : (
         <span style={{ color: 'white' }}>O carrinho está vazio...</span>
       )}
-    </StyledCartContainer>
+    </StyledCartContainerMotion>
   )
 }
 

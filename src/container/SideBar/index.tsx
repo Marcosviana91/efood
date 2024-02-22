@@ -7,7 +7,7 @@ import CartContainer from './Cart'
 import AddressForm from './Address'
 import CardPaymentForm from './CardPayment'
 
-import StyledSideBar, { StyledOverlay } from './style'
+import StyledSideBar, { StyledOverlayMotion } from './style'
 import OrderMsg from './OrderMsg'
 import { useState } from 'react'
 
@@ -23,7 +23,7 @@ function SideBar() {
   if (showSibeBar)
     return (
       <StyledSideBar>
-        <StyledOverlay onClick={() => dispatch(toggleSibeBar())} />
+        <StyledOverlayMotion onClick={() => dispatch(toggleSibeBar())} />
         {SibeBarContent == 'cart' && <CartContainer />}
         {SibeBarContent == 'adressform' && <AddressForm />}
         {SibeBarContent == 'cardform' && (
