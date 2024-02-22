@@ -28,7 +28,7 @@ const HeaderWithCart = () => {
               dispatch(
                 addNotif({
                   title: 'Carrinho vazio',
-                  text: 'O carrinho está vazio, compre algo para acessá-lo.',
+                  text: 'O carrinho está vazio, adicione algo para acessá-lo.',
                   id: -1
                 })
               )

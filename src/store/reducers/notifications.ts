@@ -18,7 +18,7 @@ const notificationSlice = createSlice({
         state.itens.find((_item) => _item.id === action.payload.id) &&
         action.payload.id == -1
       ) {
-        alert('O carrinho está vazio, compre algo para acessá-lo.')
+        alert('O carrinho está vazio, adicione algo para acessá-lo.')
       } else {
         state.itens.push(action.payload)
       }
