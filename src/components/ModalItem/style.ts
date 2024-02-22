@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { StyledMenuItemButton } from '../Button/style'
-import { estilo } from '../../styles/variaveis'
+import { Breakpoints, estilo } from '../../styles/variaveis'
 
 const StyledModal = styled.div`
   height: 100vh;
@@ -23,6 +23,16 @@ export const StyledModalContainer = styled.div`
   background-color: ${estilo.corDaFonte};
 
   position: relative;
+
+  @media (max-width: ${Breakpoints.desktop}) {
+  }
+
+  @media (max-width: ${Breakpoints.tablet}) {
+    height: min-content;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
 
   > #btn_close {
     width: 16px;

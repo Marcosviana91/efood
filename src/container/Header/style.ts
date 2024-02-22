@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { estilo } from '../../styles/variaveis'
+import { estilo, Breakpoints } from '../../styles/variaveis'
 
 const StyledHeader = styled.header`
   height: 384px;
@@ -18,6 +18,12 @@ const StyledHeader = styled.header`
     line-height: 42.19px;
     font-weight: 900;
     text-align: center;
+    @media (max-width: ${Breakpoints.desktop}) {
+    }
+
+    @media (max-width: ${Breakpoints.tablet}) {
+      width: 90vw;
+    }
   }
 `
 export default StyledHeader

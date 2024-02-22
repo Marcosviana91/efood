@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { estilo } from '../../styles/variaveis'
+import { estilo, Breakpoints } from '../../styles/variaveis'
 
 const StyledFooter = styled.footer`
   height: 298px;
@@ -21,6 +21,13 @@ const StyledFooter = styled.footer`
     width: 480px;
     font-size: 10px;
     text-align: center;
+
+    @media (max-width: ${Breakpoints.desktop}) {
+    }
+
+    @media (max-width: ${Breakpoints.tablet}) {
+      width: 90vw;
+    }
   }
 `
 export default StyledFooter
