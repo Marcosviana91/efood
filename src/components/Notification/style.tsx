@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { motion, MotionProps } from 'framer-motion'
 import { estilo } from '../../styles/variaveis'
 
 const StyledNotification = styled.div`
@@ -7,15 +8,8 @@ const StyledNotification = styled.div`
   border-radius: 4px;
   padding: 8px;
   min-height: 100px;
-  #timer {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 4px;
-    width: 0;
-    background-color: ${estilo.corDaFonte};
-    border-radius: 2px;
-  }
+  position: relative;
+
   > div {
     display: flex;
     justify-content: space-between;
@@ -42,4 +36,22 @@ const StyledNotification = styled.div`
     text-indent: 0.25in;
   }
 `
+
+const StyledNotificationTimer = styled(motion.div)`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 4px;
+  width: 100%;
+  background-color: ${estilo.corDaFonte};
+  border-radius: 2px;
+`
+type MotionStyle = {
+  style?: MotionProps['style']
+}
+
+export function MotionNotificationTimer(props: MotionStyle) {
+  return <StyledNotificationTimer style={props.style} />
+}
+
 export default StyledNotification

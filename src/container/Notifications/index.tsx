@@ -13,13 +13,13 @@ function NotificationsContainer() {
       <AnimatePresence>
         {notifications.map((value) => {
           return (
-            <motion.div key={value.id} exit={{ opacity: 0, y: 100 }}>
+            <motion.li key={value.id} exit={{ opacity: 0, y: 100 }}>
               <Notification
                 title={value.title}
                 text={value.text}
                 id={value.id}
               />
-            </motion.div>
+            </motion.li>
           )
         })}
       </AnimatePresence>

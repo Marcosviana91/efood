@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-const StyledNotificationsContainer = styled.div`
+const StyledNotificationsContainer = styled.ul`
   position: fixed;
   bottom: 0;
   right: 0;

@@ -1,4 +1,4 @@
-import StyledNotification from './style'
+import StyledNotification, { MotionNotificationTimer } from './style'
 import btn_close from '../../assets/images/btn_close.png'
 import { useDispatch } from 'react-redux'
 import { removeNotif } from '../../store/reducers/notifications'
@@ -22,7 +22,7 @@ function Notification({ title, text, id }: NotificationProps) {
       transition={{ type: 'spring', damping: 8 }}
     >
       <StyledNotification>
-        <motion.div id="timer" style={{ width: timerBar }}></motion.div>
+        <MotionNotificationTimer style={{ width: timerBar }} />
         <div>
           <h1>{title}</h1>
           <button onClick={() => dispatch(removeNotif(id!))}>
