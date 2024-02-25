@@ -13,7 +13,7 @@ function NotificationsContainer() {
       <AnimatePresence>
         {notifications.map((value) => {
           return (
-            <motion.li key={value.id} exit={{ opacity: 0, y: 100 }}>
+            <motion.li layout key={value.id} exit={{ opacity: 0, y: 100 }}>
               <Notification
                 title={value.title}
                 text={value.text}

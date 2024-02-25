@@ -20,7 +20,7 @@ export function StyledOverlayMotion({ onClick }: { onClick: () => void }) {
   return (
     <StyledOverlay
       onClick={onClick}
-      initial={{ x: '-100vw' }}
+      initial={{ x: '100vw' }}
       animate={{ x: 0 }}
       transition={{ type: 'tween' }}
     />

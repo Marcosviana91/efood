@@ -5,7 +5,9 @@ import { RootReducer } from '../../../store'
 import { changeContent } from '../../../store/reducers/cart'
 
 import CartCard from '../../../components/CartCard'
+
 import { formataPreco } from '../../../utilities/helper'
+
 import StyledCartContainerMotion, { StyledCartResumo } from './style'
 
 const itemVariants: Variants = {
@@ -52,10 +54,7 @@ function CartContainer() {
                 variants={itemVariants}
                 exit={{
                   opacity: 0,
-                  scale: 0,
-                  transition: {
-                    type: 'tween'
-                  }
+                  scale: 0
                 }}
               >
                 <CartCard {...item} />
