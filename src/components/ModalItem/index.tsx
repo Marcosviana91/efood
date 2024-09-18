@@ -3,12 +3,19 @@ import { StyledMenuItemButton } from '../Button/style'
 import StyledModal, { StyledModalContainer } from './style'
 import btn_close from '../../assets/images/btn_close.png'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
 import { addIten } from '../../store/reducers/cart'
+import { addNotif } from '../../store/reducers/notifications'
+
 import { formataPreco } from '../../utilities/helper'
 
 const ModalItem = (props: MenuItemModalProps) => {
   const dispatch = useDispatch()
+  const itensInCart = useSelector(
+    (state: RootReducer) => state.cartReducer.itens
+  )
   if (!props.showModal) return <></>
 
   return (
@@ -33,7 +40,24 @@ const ModalItem = (props: MenuItemModalProps) => {
             onClick={() => {
               const { id, nome, descricao, foto, porcao, preco } = props
               const data = { id, nome, descricao, foto, porcao, preco }
-              dispatch(addIten(data))
+
+              if (itensInCart.find((_item) => _item.id === data.id)) {
+                dispatch(
+                  addNotif({
+                    title: 'Este item já está no carrinho',
+                    text: `${data.nome}`
+                  })
+                )
+              } else {
+                dispatch(addIten(data))
+
+                dispatch(
+                  addNotif({
+                    title: 'Item adicionado ao carrinho',
+                    text: `${data.nome} no valor de ${formataPreco(data.preco)}`
+                  })
+                )
+              }
             }}
           >
             Adicionar ao carrinho - {formataPreco(props.preco)}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { RootReducer } from '../../store'
 import { toggleSibeBar } from '../../store/reducers/cart'
+import { addNotif } from '../../store/reducers/notifications'
 
 import efoodLogo from '../../assets/images/logo.svg'
 import carrinho from '../../assets/images/carrinho.svg'
@@ -23,7 +24,14 @@ const HeaderWithCart = () => {
           id="cart_button"
           onClick={() => {
             if (itens.length > 0) dispatch(toggleSibeBar())
-            else alert('Carrinho Vazio')
+            else
+              dispatch(
+                addNotif({
+                  title: 'Carrinho vazio',
+                  text: 'O carrinho está vazio, adicione algo para acessá-lo.',
+                  id: -1
+                })
+              )
           }}
         >
           <span id="cart_counter">{itens.length}</span>

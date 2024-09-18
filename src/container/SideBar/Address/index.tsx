@@ -1,4 +1,5 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../../store'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import InputMask from 'react-input-mask'
@@ -10,14 +11,17 @@ import StyledAdressForm from './style'
 
 function AddressForm() {
   const dispatch = useDispatch()
+  const adressData = useSelector(
+    (state: RootReducer) => state.orderReducer.delivery
+  )
   const formik = useFormik({
     initialValues: {
-      recName: '',
-      recAdress: '',
-      recCity: '',
-      recCode: '',
-      recNum: '',
-      recComp: ''
+      recName: adressData.receiver,
+      recAdress: adressData.address.description,
+      recCity: adressData.address.city,
+      recCode: adressData.address.zipCode,
+      recNum: adressData.address.number,
+      recComp: adressData.address.complement
     },
     validationSchema: Yup.object({
       recName: Yup.string()
@@ -44,7 +48,7 @@ function AddressForm() {
           address: {
             description: values.recAdress,
             city: values.recCity,
-            number: parseInt(values.recNum),
+            number: values.recNum,
             zipCode: values.recCode,
             complement: values.recComp
           }

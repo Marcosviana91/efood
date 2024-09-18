@@ -1,27 +1,23 @@
 import { styled } from 'styled-components'
 import { estilo } from '../../../styles/variaveis'
+import { motion } from 'framer-motion'
 
-const StyledCart = styled.aside`
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-`
-
-export const StyledOverlay = styled.div`
-  height: 100vh;
-  flex: 1;
-  background-color: rgba(0, 0, 0, 0.8);
-`
-
-export const StyledCartContainer = styled.div`
+const StyledCartContainer = styled(motion.div)`
   width: 360px;
   background-color: ${estilo.corDaFonte};
   padding: 32px 8px;
+
+  ul {
+    max-height: 80vh;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `
-export const StyledCartResumo = styled.div`
+
+export const StyledCartResumo = styled(motion.div)`
   > div {
     display: flex;
     flex-direction: row;
@@ -52,5 +48,15 @@ export const StyledCartResumo = styled.div`
     text-align: center;
   }
 `
-
-export default StyledCart
+function StyledCartContainerMotion({ children }: { children: JSX.Element[] }) {
+  return (
+    <StyledCartContainer
+      initial={{ x: 360 }}
+      animate={{ x: 0 }}
+      transition={{ type: 'tween' }}
+    >
+      {children}
+    </StyledCartContainer>
+  )
+}
+export default StyledCartContainerMotion

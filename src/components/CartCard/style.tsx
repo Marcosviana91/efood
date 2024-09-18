@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { estilo } from '../../styles/variaveis'
 
-const StyledCartCard = styled.li`
+const StyledCartCard = styled.div`
   background-color: ${estilo.corDaFonte2};
   list-style: none;
   padding: 8px;
@@ -44,6 +44,7 @@ const StyledCartCard = styled.li`
     bottom: 8px;
     right: 8px;
     img {
+      border-radius: 2px;
       width: 100%;
     }
   }

@@ -8,7 +8,7 @@ const initialState: OrderProps = {
       description: '',
       city: '',
       zipCode: '',
-      number: 0,
+      number: NaN,
       complement: ''
     }
   },
@@ -16,10 +16,10 @@ const initialState: OrderProps = {
     card: {
       name: '',
       number: '',
-      code: 0,
+      code: NaN,
       expires: {
-        month: 0,
-        year: 0
+        month: NaN,
+        year: NaN
       }
     }
   }

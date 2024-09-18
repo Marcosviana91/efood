@@ -33,11 +33,11 @@ function CardPaymentForm({
 
   const formik = useFormik({
     initialValues: {
-      cardOwner: '',
-      cardNumber: '',
-      cardCode: '',
-      cardExpiresMonth: '',
-      cardExpiresYear: ''
+      cardOwner: payment.card.name,
+      cardNumber: payment.card.number,
+      cardCode: payment.card.code,
+      cardExpiresMonth: payment.card.expires.month,
+      cardExpiresYear: payment.card.expires.year
     },
     validationSchema: Yup.object({
       cardOwner: Yup.string()
@@ -54,10 +54,10 @@ function CardPaymentForm({
           card: {
             name: values.cardOwner,
             number: values.cardNumber,
-            code: parseInt(values.cardCode),
+            code: values.cardCode,
             expires: {
-              month: parseInt(values.cardExpiresMonth),
-              year: parseInt(values.cardExpiresYear)
+              month: values.cardExpiresMonth,
+              year: values.cardExpiresYear
             }
           }
         })

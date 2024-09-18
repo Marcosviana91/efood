@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 
-import { toggleSibeBar } from '../../store/reducers/cart'
+import { toggleSibeBar, changeContent } from '../../store/reducers/cart'
 
 import CartContainer from './Cart'
 import AddressForm from './Address'
 import CardPaymentForm from './CardPayment'
 
-import StyledSideBar, { StyledOverlay } from './style'
+import StyledSideBar, { StyledOverlayMotion } from './style'
 import OrderMsg from './OrderMsg'
 import { useState } from 'react'
 
@@ -23,7 +23,12 @@ function SideBar() {
   if (showSibeBar)
     return (
       <StyledSideBar>
-        <StyledOverlay onClick={() => dispatch(toggleSibeBar())} />
+        <StyledOverlayMotion
+          onClick={() => {
+            dispatch(toggleSibeBar())
+            dispatch(changeContent('cart'))
+          }}
+        />
         {SibeBarContent == 'cart' && <CartContainer />}
         {SibeBarContent == 'adressform' && <AddressForm />}
         {SibeBarContent == 'cardform' && (
